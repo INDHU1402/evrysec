@@ -1,0 +1,41 @@
+
+{% extends 'base.html' %}
+
+{% block title %}Login{% endblock %}
+
+{% block content %}
+{% load static %}
+<html>
+  <head>
+    <style>  
+        .round1 {
+                    border: 2px solid black;
+                    border-radius: 5px;
+                    padding:10px;
+                  }
+                </style>
+        
+       
+        <div class="round1">
+          <table>
+              <tr>
+                  <th style="position:relative;top:8px"> 
+                      <img src="{% static 'logo.jpg' %}" align="left" width="280px" height="75px">
+                  </th>
+        </tr>
+              </table>
+              </div>
+                    </head>
+<body style="background-color: white">
+<center><h2>Login</h2></center>
+</body>
+</html>
+<center>
+<form method="post">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <a href="{% url 'password_reset' %}">forgot password?</a>
+  <button type="submit">Login</button>
+</form>
+</center>
+{% endblock %}

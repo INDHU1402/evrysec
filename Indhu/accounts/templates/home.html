@@ -1,0 +1,344 @@
+
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+{% if user.is_authenticated %}
+  
+{% load static %}
+<html>
+  <head>
+<title>Home page</title>
+  <meta charset="utf-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+              <style>
+            .sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+            .button1 {
+                    border-radius:10px;
+                    background-color:white;  
+                    color:black; 
+                    border: 2px solid black;
+                    padding:15px 32px;
+                    position:relative;
+                    right:30px;
+                  }
+                table,td,th{
+                    width:100%;
+                    background:white;
+                    padding:1px;
+               }
+               div.relative{
+                   position:relative;
+                   right:40px;
+               }
+               .round1 {
+              border: 2px solid black;
+              border-radius: 5px;
+              padding:10px;
+            }
+.column {
+float: left;
+width: 33.33%;
+padding: 15px;
+}
+
+.column1 {
+float: left;
+width: 50%;
+padding: 15px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+content: "";
+display: table;
+clear: both;
+}
+
+/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+@media screen and (max-width:600px) {
+.column {
+  width: 100%;
+}
+} 
+ </style>
+
+
+
+<script>
+  function openNav() {
+    document.getElementById("mySidenav").style.width = "250px";
+  }
+  
+  function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+  }
+  
+  function myFunction() {
+    alert('Alerted police');
+  }
+  </script>
+
+
+        <div class="round1">
+                <table>
+                    <tr>
+                      <th>
+                        <div id="mySidenav" class="sidenav">
+                          <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                          <a href="{% url 'logout' %}">Profile</a>
+                          <a href="{% url 'logout' %}">Reports</a>
+                          <a href="{% url 'logout' %}">Settings</a>
+                          <a href="{% url 'logout' %}">Help</a>
+                        </div>
+                        <span align = "left" style="font-size:20px;cursor:pointer" onclick="openNav()">&#9776; Menu</span>
+                      </th>
+                        <th style="position:relative;top:8px"> 
+                            <img src="{% static 'logo.jpg' %}" align="left" width="280px" height="75px">
+                        </th>
+                  <th><a href="{% url 'logout' %}"><button class="button button1"> <font size="4">logout</font> </button></a></th>
+              </tr>
+                    </table>
+                    </div>
+                  </head>
+            <body>
+
+<div class="container"><br>
+<h4>In case of emergency just click</h4>   
+<div class="row">
+<div class="column"><br>
+  <td><button><img src="{% static 'fire.jpg' %}" width="100px" height="100px"></button></td>
+  <th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+  <td><button><img src="{% static 'harrasment1.jpg' %}" width="100px" height="100px"></button></td>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br><br>
+  <p>&nbsp;&nbsp;&nbsp;Fire accident&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Harrasment</p>
+</div>
+
+<div class="column"><br>
+  <td><button><img src="{% static 'traffic.png' %}" width="100px" height="100px"></button></td>
+  <th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+  <td><button><img src="{% static 'cybersecurity.png' %}" width="100px" height="100px"></button></td>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br><br>
+  <p>&nbsp;&nbsp;&nbsp;Traffic rules&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Cyber crime</p>
+</div>
+
+<div class="column"><br>
+  <td><button><img src="{% static 'accident1.png' %}" width="100px" height="100px"></button></td>
+  <th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+  <td><button><img src="{% static 'other.jpg' %}" width="100px" height="100px"></button></td>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br><br>
+  <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Accident&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Other crimes</p>
+</div>
+</div>
+</div>
+
+<div class="container">
+<div class="row">
+  <div class="column1"><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <td>
+      <th>
+        <a href="{% url 'report' %}"><button><img src="{% static 'rep.png' %}" width="150px" height="150px"></button></a></th></td>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br><br>
+    <h5>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Report&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h5>
+  </div>
+  <div class="column1"><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <td><button><img src="{% static 'staff.jpg' %}" width="150px" height="150px"></button></td>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br><br>
+    <h5>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      &nbsp;&nbsp;Staff Assist &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h5>
+  </div>
+</div>
+</div>
+
+</body>
+          </body>
+</html>
+
+
+
+{% else %}
+
+
+{% load static %}
+  <html>
+    <head>
+  <title>Carousel page</title>
+    <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+       <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+           <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+                <style>
+              .button1 {
+                      border-radius:10px;
+                      background-color:white;  
+                      color:black; 
+                      border: 2px solid black;
+                      padding:15px 32px;
+                      position:relative;
+                      right:30px;
+                    }
+                  table,td,th{
+                      width:100%;
+                      background:white;
+                      padding:1px;
+                 }
+                 div.relative{
+                     position:relative;
+                     right:40px;
+                 }
+                 .round1 {
+                border: 2px solid black;
+                border-radius: 5px;
+                padding:10px;
+              }
+.column {
+  float: left;
+  width: 33.33%;
+  padding: 15px;
+}
+
+.column1 {
+  float: left;
+  width: 50%;
+  padding: 15px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+@media screen and (max-width:600px) {
+  .column {
+    width: 100%;
+  }
+}
+                </style>
+              
+              
+                      <div class="round1">
+                  <table>
+                      <tr>
+                          <th style="position:relative;top:8px"> 
+                              <img src="{% static 'logo.jpg' %}" align="left" width="280px" height="75px">
+                          </th>
+                    <th><a href="{% url 'login' %}"><button class="button button1"> <font size="4">login</font> </button></a></th>
+                    <th><a href="{% url 'signup' %}"><button class="button button1"> <font size="4">signup</font> </button></a></th>
+                </tr>
+                      </table>
+                      </div>
+                    </head>
+              <body>
+
+ <div class="container"><br>
+  <h4>In case of emergency just click</h4>   
+<div class="row">
+  <div class="column"><br>
+    <td><button><img src="{% static 'fire.jpg' %}" width="100px" height="100px"></button></td>
+    <th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+    <td><button><img src="{% static 'harrasment1.jpg' %}" width="100px" height="100px"></button></td>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br><br>
+    <p>&nbsp;&nbsp;&nbsp;Fire accident&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Harrasment</p>
+  </div>
+
+  <div class="column"><br>
+    <td><button><img src="{% static 'traffic.png' %}" width="100px" height="100px"></button></td>
+    <th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+    <td><button><img src="{% static 'cybersecurity.png' %}" width="100px" height="100px"></button></td>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br><br>
+    <p>&nbsp;&nbsp;&nbsp;Traffic rules&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Cyber crime</p>
+  </div>
+
+  <div class="column"><br>
+    <td><button><img src="{% static 'accident1.png' %}" width="100px" height="100px"></button></td>
+    <th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+    <td><button><img src="{% static 'other.jpg' %}" width="100px" height="100px"></button></td>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br><br>
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Accident&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Other crimes</p>
+  </div>
+</div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="column1"><br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <td><button><img src="{% static 'rep.png' %}" width="150px" height="150px"></button></td>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br><br>
+      <h5>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Report&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h5>
+    </div>
+    <div class="column1"><br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <td><button><img src="{% static 'staff.jpg' %}" width="150px" height="150px"></button></td>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br><br>
+      <h5>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;Staff Assist &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h5>
+    </div>
+  </div>
+</div>
+
+</body>
+            </body>
+  </html>
+  
+  
+{% endif %}
+{% endblock %}
