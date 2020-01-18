@@ -150,8 +150,12 @@ clear: both;
 <h4>In case of emergency just click</h4>   
 <div class="row">
 <div class="column"><br>
-  <td><button><img src="{% static 'fire.jpg' %}" width="100px" height="100px"></button></td>
-  <th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+  <td><a href = "{% url 'success' %}">
+    <button><img src="{% static 'fire.jpg' %}" width="100px" height="100px">
+    </button>
+  </a></td>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br><br>
+
   <td><button><img src="{% static 'harrasment1.jpg' %}" width="100px" height="100px"></button></td>
   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br><br>
   <p>&nbsp;&nbsp;&nbsp;Fire accident&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Harrasment</p>
