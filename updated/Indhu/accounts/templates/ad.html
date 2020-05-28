@@ -1,0 +1,47 @@
+
+<html>
+    <head>
+        <style>        
+            .round1 {
+                        border: 2px solid #5AB9D0;
+                        border-radius: 5px;
+                        padding:10px;
+                      }
+                    </style>
+            
+            <div class="round1" style="background-color:white">
+                    <table>
+                        <tr>
+                            <th style="align:left;position:relative;top:8px"> 
+                                <img src="l.png" align="left" width="85px" height="75px">
+                                 
+                      </th>
+                      <th><img src="logo.png" align="left" width="160px" height="100px"></th>
+                      </tr>
+                        </table>
+                        </div>
+                        </head>
+<body style="background-color:whitesmoke;">
+  <h1>Order confirmed</h1>
+  <a href="track.html">Track your order</a>
+</body>
+</html>
+
+  <script> 
+      // Function to generate OTP 
+      function generateOTP() { 
+                
+          // Declare a digits variable  
+          // which stores all digits 
+          var digits = '0123456789'; 
+          let OTP = ''; 
+          for (let i = 0; i < 4; i++ ) { 
+              OTP += digits[Math.floor(Math.random() * 10)]; 
+          } 
+          return OTP; 
+      } 
+      var myvar = generateOTP();
+      document.write('Your Order ID: '); 
+      document.write(myvar);
+      </script>
+  
